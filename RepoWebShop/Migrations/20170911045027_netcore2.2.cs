@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RepoWebShop.Migrations
 {
-    public partial class PreparationTime2 : Migration
+    public partial class netcore22 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

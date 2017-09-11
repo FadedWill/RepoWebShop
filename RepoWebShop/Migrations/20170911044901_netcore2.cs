@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore.Migrations;
+using System;
 using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace RepoWebShop.Migrations
 {
-    public partial class Ihcwork2 : Migration
+    public partial class netcore2 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

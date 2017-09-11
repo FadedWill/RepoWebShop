@@ -13,6 +13,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 
+
 namespace RepoWebShop
 {
     public class Startup
@@ -31,8 +32,8 @@ namespace RepoWebShop
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<AppDbContext>(options =>
-                options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
+            //services.AddDbContext<AppDbContext>(options =>
+            //    options.UseSqlServer(_configurationRoot.GetConnectionString("DefaultConnection")));
 
             services.AddIdentity<IdentityUser, IdentityRole>()
                 .AddEntityFrameworkStores<AppDbContext>();
@@ -47,6 +48,8 @@ namespace RepoWebShop
 
             services.AddMemoryCache();
             services.AddSession();
+
+            //services.AddAutoMapper(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,7 +67,7 @@ namespace RepoWebShop
 
             app.UseStaticFiles();
             app.UseSession();
-            app.UseIdentity();
+            app.UseAuthentication();
             //app.UseMvcWithDefaultRoute();
 
             app.UseMvc(routes =>
